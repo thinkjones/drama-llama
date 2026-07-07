@@ -80,6 +80,25 @@ h2.section {
 .legend {
   font-size: 11px; color: #55606b; margin-top: 6px;
 }
+/* Worked example */
+.example {
+  background: #fffdf5; border: 2px solid var(--accent); border-radius: 12px;
+  padding: 10px 16px; margin: 14px 0 2px; font-size: 14px;
+}
+.example .extitle { font-weight: bold; color: var(--accent); }
+.exwrap { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 8px; }
+.extable {
+  display: inline-grid; grid-auto-flow: column; gap: 0;
+  border: 2px solid #c4d0d8; border-radius: 8px; overflow: hidden;
+}
+.extable .col { display: grid; }
+.extable .h, .extable .b { padding: 4px 12px; text-align: center; font-family: "Courier New", monospace; }
+.extable .h { background: #eef3f5; font-size: 12px; color: #55606b; border-bottom: 2px solid #c4d0d8; }
+.extable .b { font-weight: bold; font-size: 18px; }
+.extable .b.on { background: #fff3c4; }
+.exmath { font-size: 14px; line-height: 1.5; }
+.exmath .exsum { font-size: 16px; margin: 2px 0; }
+.exmath .extotal { color: var(--accent); font-weight: bold; font-size: 18px; }
 .footer {
   margin-top: 22px; border-top: 2px solid var(--accent); padding-top: 8px;
   font-size: 12px; color: #55606b; text-align: center;
@@ -145,8 +164,26 @@ h2.section {
     <div class="k"><div class="kl">Y</div><div class="kn">10</div></div>
     <div class="k"><div class="kl">Z</div><div class="kn">23</div></div>
   </div>
-  <div class="legend">Binary reminder: each place is 1, 2, 4, 8, 16, 32 &hellip;
-    So <code>1101</code> = 8 + 4 + 0 + 1 = <strong>13</strong>.</div>
+  <div class="legend">Binary reminder: each place is 1, 2, 4, 8, 16, 32 &hellip;</div>
+
+  <div class="example">
+    <div class="extitle">&#9999;&#65039; Example &mdash; how to decode one box</div>
+    <div class="exwrap">
+      <div class="extable">
+      <div class="col"><div class="h">16</div><div class="b on">1</div></div>
+      <div class="col"><div class="h">8</div><div class="b">0</div></div>
+      <div class="col"><div class="h">4</div><div class="b">0</div></div>
+      <div class="col"><div class="h">2</div><div class="b on">1</div></div>
+      <div class="col"><div class="h">1</div><div class="b on">1</div></div>
+      </div>
+      <div class="exmath">
+        <div>Add the place values that sit above a <strong>1</strong> (skip the 0s):</div>
+        <div class="exsum">16 + 2 + 1 = <span class="extotal">19</span></div>
+        <div>So the binary <code>10011</code> = <strong>19</strong>. Now find
+             <strong>19</strong> in the Decoder Key and write its letter. That's it!</div>
+      </div>
+    </div>
+  </div>
 
   <h2 class="section">&#128274; Your Secret Message (10 letters)</h2>
   <div class="puzzle">
