@@ -1,0 +1,77 @@
+// Build script for the AgentArmor mod (Minecraft 1.20.1, Forge).
+// This uses ForgeGradle, which downloads Minecraft + Forge and builds our mod.
+plugins {
+    id 'eclipse'
+    id 'idea'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = mod_id
+}
+
+// Mojang ships Java 17 for 1.20.1, so we compile against Java 17.
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+minecraft {
+    // Official Mojang mappings for 1.20.1.
+    mappings channel: mapping_channel, version: mapping_version
+
+    // Copies our mods.toml at build time so the version stays in sync.
+    copyIdeResources = true
+
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            mods {
+                "${mod_id}" {
+                    source sourceSets.main
+                }
+            }
+        }
+        server {
+            workingDirectory project.file('run')
+            property 'forge.logging.console.level', 'debug'
+            mods {
+                "${mod_id}" {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+// Tells Gradle where our textures/models/lang files live.
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+repositories {
+    // Add extra maven repos here if you use other mods' libraries.
+}
+
+dependencies {
+    // The exact Minecraft + Forge version we build against.
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+}
+
+// Writes useful info into the built .jar so Forge can read our mod's details.
+tasks.named('jar', Jar).configure {
+    manifest {
+        attributes([
+                'Specification-Title'     : mod_id,
+                'Specification-Vendor'    : mod_authors,
+                'Specification-Version'   : '1',
+                'Implementation-Title'    : project.name,
+                'Implementation-Version'  : project.jar.archiveVersion,
+                'Implementation-Vendor'   : mod_authors
+        ])
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}

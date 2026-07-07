@@ -1,0 +1,29 @@
+# This file tells Forge about our mod: its name, version, and what it needs to run.
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+
+[[mods]]
+modId="agentarmor"
+version="1.0.0"
+displayName="Agent Armor"
+authors="Camp Drama Llama"
+description='''
+Adds a shiny AgentArmor set to Minecraft. Built by young agents at Camp Drama Llama! 🦙
+'''
+
+# We depend on Forge...
+[[dependencies.agentarmor]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47,)"
+    ordering="NONE"
+    side="BOTH"
+
+# ...and on Minecraft 1.20.1.
+[[dependencies.agentarmor]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,1.21)"
+    ordering="NONE"
+    side="BOTH"

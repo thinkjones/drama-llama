@@ -1,0 +1,12 @@
+   __     _______ _   _  _   ___     __
+   \ \   / / ____| \ | || | | \ \   / /
+    \ \_/ / |  _|  \| || | | |\ \_/ /
+     \   /| |_| | |\  || |_| | \   /
+      \_/  \____|_| \_| \___/   \_/
+
+  YOU FOUND IT!  Great terminal detective work.
+
+  Your secret code word for Activity 2 is:  AGENT-LLAMA
+
+  Tell your instructor you found activity2.txt and
+  you're ready to write some Python!
