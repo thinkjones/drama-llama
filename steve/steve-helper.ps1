@@ -39,10 +39,17 @@ function Show-Help {
     Write-Host ""
 
     Write-Host "HOW TO INSTALL INTO REAL MINECRAFT (needs Minecraft Java + Forge 1.20.1)" -ForegroundColor Green
-    Write-Host "  1. steve build"
-    Write-Host "  2. steve install"
-    Write-Host "  3. Open the Minecraft Launcher and pick the 'Forge 1.20.1' profile."
-    Write-Host "  4. Play -> Create New World."
+    Write-Host "  Official Minecraft Launcher:"
+    Write-Host "    1. steve build"
+    Write-Host "    2. steve install        (puts jar in %APPDATA%\.minecraft\mods)"
+    Write-Host "    3. Open the Minecraft Launcher and pick the 'Forge 1.20.1' profile."
+    Write-Host "    4. Play -> Create New World."
+    Write-Host ""
+    Write-Host "  CurseForge:"
+    Write-Host "    1. steve build"
+    Write-Host "    2. Make a Custom Profile with Minecraft 1.20.1 + Forge 47.x."
+    Write-Host "    3. Right-click profile -> Open Folder -> copy the jar into mods\."
+    Write-Host "    4. Play."
     Write-Host ""
 
     Write-Host "COMMANDS" -ForegroundColor Green
@@ -94,6 +101,7 @@ function Invoke-Install {
     Write-Host "`n[OK] Copied $jarName to:" -ForegroundColor Green
     Write-Host "  $modsDir" -ForegroundColor Yellow
     Write-Host "`nOpen the Minecraft Launcher, choose the 'Forge 1.20.1' profile, and play.`n" -ForegroundColor Green
+    Write-Host "Using CurseForge instead? See TESTING.md for the CurseForge mods folder.`n" -ForegroundColor DarkGray
 }
 
 # --- Main entry point --------------------------------------------------------

@@ -67,24 +67,29 @@ the same on every computer, so a jar you built works in real Minecraft too.
    .\gradlew.bat build
    ```
    The mod is now at `build\libs\agentarmor-1.0.0.jar`.
-2. Open your Minecraft **mods** folder. Fastest way — press **Win + R**, paste
-   this, and press Enter:
-   ```
-   %APPDATA%\.minecraft\mods
-   ```
-   (If the `mods` folder doesn't exist yet, create it.)
-3. Copy `build\libs\agentarmor-1.0.0.jar` into that `mods` folder. You can do
-   it from PowerShell:
-   ```powershell
-   Copy-Item build\libs\agentarmor-1.0.0.jar "$env:APPDATA\.minecraft\mods\"
-   ```
-4. Open the **Minecraft Launcher**, choose the **Forge 1.20.1** profile, click
-   **Play**, then **Create New World**.
-5. You'll spawn at the **Spy HQ** with your armor — just like Way A.
+2. Put the jar in the right **mods** folder for the launcher you are using:
+
+   **Official Minecraft Launcher**
+   - Press **Win + R**, paste `%APPDATA%\.minecraft\mods`, and press Enter.
+   - Copy `build\libs\agentarmor-1.0.0.jar` into that folder.
+   - Or from PowerShell: `steve install`
+
+   **CurseForge**
+   - In CurseForge, click your **Minecraft** section.
+   - Create a **Custom Profile** with:
+     - **Minecraft version:** `1.20.1`
+     - **Modloader:** `Forge` (pick the latest `47.x` version)
+   - Right-click the profile → **Open Folder**.
+   - Copy `build\libs\agentarmor-1.0.0.jar` into the `mods` folder inside that profile.
+   - Click **Play** on that profile.
+
+3. Open the launcher, choose the **Forge 1.20.1** profile, click **Play**, then
+   **Create New World**.
+4. You'll spawn at the **Spy HQ** with your armor — just like Way A.
 
 ### To test a new change
-Rebuild (`.\gradlew.bat build`), copy the new jar over the old one (step 3), and
-relaunch Minecraft. Delete the old jar first if the filename changed.
+Rebuild (`.\gradlew.bat build` or `steve build`), copy the new jar over the old
+one, and relaunch Minecraft. Delete the old jar first if the filename changed.
 
 > ⚠️ The mod is built for **Minecraft 1.20.1 + Forge only**. It won't load on
 > other versions or on Fabric.
