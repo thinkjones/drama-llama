@@ -98,7 +98,7 @@ function Add-PathEntry {
 function Write-SteveCommand {
     # The .cmd wrapper lets `steve` work from PowerShell, cmd, and Win+R.
     $cmdPath = Join-Path $steveDir 'steve.cmd'
-    $content = "@echo off`r`npowershell -NoProfile -ExecutionPolicy Bypass -File `"%~dp0steve.ps1`" %*"
+    $content = "@echo off`r`npowershell -NoProfile -ExecutionPolicy Bypass -File `"%~dp0steve-helper.ps1`" %*"
     Set-Content -Path $cmdPath -Value $content -Encoding ASCII -Force
     Write-Host "  Created $cmdPath" -ForegroundColor Green
 }
