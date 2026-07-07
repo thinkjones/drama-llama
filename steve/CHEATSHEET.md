@@ -8,6 +8,10 @@ make it your own!
 > show the game, so we use **PowerShell** here instead of the WSL terminal you
 > used in Activities 1 and 2.
 
+> 📥 **Don't have the files yet?** Do **[GET-STARTED.md](GET-STARTED.md)** first
+> — one line in PowerShell installs Git and downloads everything to your home
+> folder.
+
 ---
 
 ## 1. Open PowerShell and go to this folder
