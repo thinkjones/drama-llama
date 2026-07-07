@@ -27,10 +27,12 @@ their "agent name" with ASCII art, then customize the art. (The `gohan/` folder
 starts empty except its cheatsheet — the kids create the code.)
 
 ### Activity 3 — Minecraft Mod (`steve/`)
-A ready-to-build **Forge 1.20.1** mod that adds an **Agent Armor** set. Kids use
-Claude Code to change it (stats, names, colors, new pieces) and build it with
-`./gradlew build`. Includes `CLAUDE.md` and a `minecraft-modder` helper agent so
-Claude Code already understands the project.
+A ready-to-build **Forge 1.20.1** mod that adds an **Agent Armor** set. When a
+player joins a world it flashes a **"Camp Drama Llama"** welcome, plays a sound,
+and hands them the armor — so the very first test is fun to see. Kids use Claude
+Code to change it (the welcome, stats, names, colors, new pieces) and build it
+with `./gradlew build`. Includes `CLAUDE.md` and a `minecraft-modder` helper
+agent so Claude Code already understands the project.
 
 ## Repo layout
 ```

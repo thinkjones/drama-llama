@@ -26,7 +26,10 @@ steve/
     ├── java/com/dramallama/agentarmor/
     │   ├── AgentArmorMod.java       # main class; adds armor to creative menu
     │   ├── ModItems.java            # registers the 4 armor pieces
-    │   └── ModArmorMaterials.java   # HOW STRONG the armor is (tweak numbers here)
+    │   ├── ModArmorMaterials.java   # HOW STRONG the armor is (tweak numbers here)
+    │   └── WelcomeHandler.java      # the FUN part: on world-join, shows a
+    │                                #   "Camp Drama Llama" title + chat message,
+    │                                #   plays a sound, and gives the armor set
     └── resources/
         ├── META-INF/mods.toml       # mod metadata Forge reads
         └── assets/agentarmor/
@@ -44,6 +47,9 @@ steve/
 | Change durability (how long it lasts) | `durabilityMultiplier` (the `37`) in `ModArmorMaterials.java` |
 | Change what repairs it            | `Ingredient.of(Items.DIAMOND)` in `ModArmorMaterials.java` |
 | Change the equip sound            | `SoundEvents.ARMOR_EQUIP_NETHERITE` in `ModArmorMaterials.java` |
+| Change the welcome message/title  | the `Component.literal(...)` lines in `WelcomeHandler.java`  |
+| Change the join sound             | `SoundEvents.PLAYER_LEVELUP` in `WelcomeHandler.java`       |
+| Stop auto-giving the armor        | delete the `if (...) { giveItem(...) }` block in `WelcomeHandler.java` |
 | Rename the armor (display)        | `assets/agentarmor/lang/en_us.json`                     |
 | Rename the mod id (advanced)      | `mod_id` in `gradle.properties` + folder/asset names + `mods.toml` — do this carefully and explain the ripple effects |
 | Change icon/armor color           | the `.png` files under `textures/` (regenerate placeholders) |

@@ -20,6 +20,10 @@ This is the mod. Type `ls` to see the files.
 ## 2. What's already here
 
 - **Agent Armor** — a helmet, chestplate, leggings, and boots.
+- A **surprise welcome!** When you load a world, a big **"Camp Drama Llama"**
+  banner pops up, you get a friendly message, a happy sound plays, and your
+  Agent Armor lands right in your bag. 🦙 (See `WelcomeHandler.java` — try
+  changing the words!)
 - The code lives in `src/main/java/com/dramallama/agentarmor/`.
 - The pictures (textures) live in `src/main/resources/assets/agentarmor/`.
 
@@ -81,8 +85,9 @@ To turn your code into a real mod file Minecraft can load, type:
 ./gradlew runClient
 ```
 
-This launches a test copy of Minecraft with your mod loaded. In **creative
-mode**, open the inventory and look in the **Combat** tab for your Agent Armor!
+This launches a test copy of Minecraft with your mod loaded. As soon as you
+enter a world you'll see the **Camp Drama Llama** welcome and get your armor.
+You can also find it any time in the **Combat** tab of the creative inventory!
 
 ---
 
