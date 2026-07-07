@@ -27,9 +27,11 @@ steve/
     │   ├── AgentArmorMod.java       # main class; adds armor to creative menu
     │   ├── ModItems.java            # registers the 4 armor pieces
     │   ├── ModArmorMaterials.java   # HOW STRONG the armor is (tweak numbers here)
-    │   └── WelcomeHandler.java      # the FUN part: on world-join, shows a
-    │                                #   "Camp Drama Llama" title + chat message,
-    │                                #   plays a sound, and gives the armor set
+    │   ├── WelcomeHandler.java      # the FUN part: on world-join, shows a
+    │   │                            #   "Camp Drama Llama" title + chat message,
+    │   │                            #   plays a sound, and gives the armor set
+    │   └── HeadquartersBuilder.java # builds the Spy HQ + giant "CAMP DRAMA
+    │                                #   LLAMA" sign near spawn (once per world)
     └── resources/
         ├── META-INF/mods.toml       # mod metadata Forge reads
         └── assets/agentarmor/
@@ -50,6 +52,9 @@ steve/
 | Change the welcome message/title  | the `Component.literal(...)` lines in `WelcomeHandler.java`  |
 | Change the join sound             | `SoundEvents.PLAYER_LEVELUP` in `WelcomeHandler.java`       |
 | Stop auto-giving the armor        | delete the `if (...) { giveItem(...) }` block in `WelcomeHandler.java` |
+| Change the HQ blocks / size       | the palette + size constants at the top of `HeadquartersBuilder.java` |
+| Change the giant sign text        | the `drawText(...)` calls in `HeadquartersBuilder.buildSign` (add letters to `FONT` if needed) |
+| Rebuild the HQ in a test world    | it builds once (a hidden bedrock marker guards it); break that block or use a fresh world to rebuild |
 | Rename the armor (display)        | `assets/agentarmor/lang/en_us.json`                     |
 | Rename the mod id (advanced)      | `mod_id` in `gradle.properties` + folder/asset names + `mods.toml` — do this carefully and explain the ripple effects |
 | Change icon/armor color           | the `.png` files under `textures/` (regenerate placeholders) |

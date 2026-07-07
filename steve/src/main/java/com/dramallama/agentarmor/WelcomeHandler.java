@@ -68,6 +68,9 @@ public class WelcomeHandler {
             giveItem(player, ModItems.AGENT_LEGGINGS.get());
             giveItem(player, ModItems.AGENT_BOOTS.get());
         }
+
+        // --- 5. Build the Spy HQ near spawn (only the first time) ---------
+        HeadquartersBuilder.buildIfNeeded(player.serverLevel(), player);
     }
 
     // Puts an item in the player's inventory, or drops it at their feet if full.

@@ -24,6 +24,10 @@ This is the mod. Type `ls` to see the files.
   banner pops up, you get a friendly message, a happy sound plays, and your
   Agent Armor lands right in your bag. 🦙 (See `WelcomeHandler.java` — try
   changing the words!)
+- A **giant Spy Headquarters** builds itself near spawn, with **CAMP DRAMA
+  LLAMA** glowing in huge letters — and you spawn right outside the front
+  doors! (See `HeadquartersBuilder.java` — try changing the blocks or the
+  sign text!)
 - The code lives in `src/main/java/com/dramallama/agentarmor/`.
 - The pictures (textures) live in `src/main/resources/assets/agentarmor/`.
 
