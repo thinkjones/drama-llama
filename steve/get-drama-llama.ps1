@@ -97,6 +97,10 @@ function Add-PathEntry {
 
 function Write-SteveCommand {
     # The .cmd wrapper lets `steve` work from PowerShell, cmd, and Win+R.
+    # Remove the old steve.ps1 name so PowerShell can't accidentally run it
+    # instead of steve.cmd on machines where .ps1 is in PATHEXT.
+    $oldPs1 = Join-Path $steveDir 'steve.ps1'
+    if (Test-Path $oldPs1) { Remove-Item $oldPs1 -Force }
     $cmdPath = Join-Path $steveDir 'steve.cmd'
     $content = "@echo off`r`npowershell -NoProfile -ExecutionPolicy Bypass -File `"%~dp0steve-helper.ps1`" %*"
     Set-Content -Path $cmdPath -Value $content -Encoding ASCII -Force
