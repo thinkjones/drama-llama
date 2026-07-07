@@ -1,2 +1,5 @@
 .DS_Store
 **/.DS_Store
+
+# Obsidian editor config (local UI state, not shared repo content)
+.obsidian/
