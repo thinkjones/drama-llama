@@ -112,7 +112,7 @@ function Invoke-GradleSetup {
     Write-Host "`n==> Running first-time Minecraft/Forge gradle build (this may take 5-15 minutes) ..." -ForegroundColor Cyan
     Push-Location $steveDir
     try {
-        & $gradlew.bat build
+        & $gradlew build
         if ($LASTEXITCODE -ne 0) {
             Write-Host "  Gradle build had an error. Don't worry - run 'steve build' later to try again." -ForegroundColor Yellow
         } else {
