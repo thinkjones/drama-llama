@@ -16,6 +16,10 @@ We use a Linux terminal on Windows called **WSL (Ubuntu)**.
 
 > If you don't see Ubuntu, ask your instructor — it may need to be turned on.
 
+Username: rainbow
+Password: dash
+
+
 ---
 
 ## 2. Go to the workshop folder

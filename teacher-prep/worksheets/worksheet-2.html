@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Camp Drama Llama — Secret Decoder #2</title>
+<style>:root { --accent: #7e57c2; }
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: "Comic Sans MS", "Trebuchet MS", "Segoe UI", sans-serif;
+  color: #1a2530;
+  background: #fff;
+  padding: 28px 34px;
+}
+.header {
+  display: flex; align-items: center; gap: 14px;
+  border-bottom: 4px solid var(--accent);
+  padding-bottom: 10px; margin-bottom: 6px;
+}
+.llama { font-size: 44px; line-height: 1; }
+.title { flex: 1; }
+.title h1 { margin: 0; font-size: 24px; color: var(--accent); }
+.title .sub { font-size: 14px; color: #55606b; margin-top: 2px; }
+.badge {
+  border: 3px solid var(--accent); color: var(--accent);
+  border-radius: 12px; padding: 6px 12px; font-weight: bold;
+  font-size: 13px; text-align: center; white-space: nowrap;
+}
+.nameline {
+  display: flex; gap: 30px; font-size: 14px; margin: 10px 0 14px;
+}
+.nameline span { flex: 1; border-bottom: 2px dotted #9aa7b2; padding-bottom: 2px; }
+.steps {
+  background: #f4f8f9; border: 2px dashed var(--accent);
+  border-radius: 12px; padding: 10px 16px; font-size: 14px; margin-bottom: 16px;
+}
+.steps ol { margin: 6px 0 0; padding-left: 20px; }
+.steps li { margin: 3px 0; }
+h2.section {
+  font-size: 16px; color: var(--accent); margin: 18px 0 8px;
+  border-left: 6px solid var(--accent); padding-left: 8px;
+}
+/* Decoder key grid */
+.key {
+  display: grid; grid-template-columns: repeat(13, 1fr);
+  gap: 5px; margin-bottom: 4px;
+}
+.key .k {
+  border: 2px solid #c4d0d8; border-radius: 8px; text-align: center;
+  padding: 4px 0;
+}
+.key .k .kl { font-weight: bold; font-size: 15px; color: var(--accent); }
+.key .k .kn { font-size: 14px; }
+/* Puzzle */
+.puzzle {
+  display: flex; flex-wrap: wrap; align-items: flex-start; gap: 10px;
+  margin-top: 6px;
+}
+.word { display: flex; gap: 10px; }
+.cell { width: 58px; text-align: center; }
+.cell .bin {
+  font-family: "Courier New", monospace; font-weight: bold; font-size: 15px;
+  background: #eef3f5; border: 2px solid #c4d0d8; border-radius: 6px;
+  padding: 4px 0;
+}
+.cell .arrow { color: #9aa7b2; font-size: 12px; line-height: 14px; }
+.cell .dec {
+  border: 2px solid #c4d0d8; border-radius: 6px; height: 30px; margin: 2px 0;
+}
+.cell .let {
+  border-bottom: 3px solid #1a2530; height: 34px; margin-top: 2px;
+}
+.cell .lab { font-size: 9px; color: #9aa7b2; }
+.spacer {
+  width: 26px; align-self: stretch; display: flex;
+  align-items: center; justify-content: center;
+  color: #c4d0d8; font-size: 22px;
+}
+.legend {
+  font-size: 11px; color: #55606b; margin-top: 6px;
+}
+.footer {
+  margin-top: 22px; border-top: 2px solid var(--accent); padding-top: 8px;
+  font-size: 12px; color: #55606b; text-align: center;
+}
+@media print {
+  body { padding: 0.5in; }
+  .no-print { display: none; }
+}
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="llama">&#129433;</div>
+    <div class="title">
+      <h1>Camp Drama Llama &mdash; Secret Binary Decoder</h1>
+      <div class="sub">Crack the code, Agent! Turn 1s and 0s into a secret message.</div>
+    </div>
+    <div class="badge">MISSION&nbsp;#2</div>
+  </div>
+
+  <div class="nameline">
+    <span>Agent name:</span>
+    <span>Date:</span>
+  </div>
+
+  <div class="steps">
+    <strong>How to crack the code:</strong>
+    <ol>
+      <li>Look at the <strong>binary number</strong> in each box (like <code>1101</code>).</li>
+      <li><strong>Convert it to a decimal number</strong> and write it in the middle box.</li>
+      <li>Find that number in the <strong>Decoder Key</strong> below and write its <strong>letter</strong> on the line.</li>
+      <li>Read all the letters in order to reveal the secret phrase! The
+          <span style="font-family:monospace">&#9251;</span> symbol means a space between words.</li>
+    </ol>
+  </div>
+
+  <h2 class="section">&#128273; Decoder Key</h2>
+  <div class="key">
+    <div class="k"><div class="kl">A</div><div class="kn">4</div></div>
+    <div class="k"><div class="kl">B</div><div class="kn">17</div></div>
+    <div class="k"><div class="kl">C</div><div class="kn">9</div></div>
+    <div class="k"><div class="kl">D</div><div class="kn">2</div></div>
+    <div class="k"><div class="kl">E</div><div class="kn">21</div></div>
+    <div class="k"><div class="kl">F</div><div class="kn">30</div></div>
+    <div class="k"><div class="kl">G</div><div class="kn">11</div></div>
+    <div class="k"><div class="kl">H</div><div class="kn">6</div></div>
+    <div class="k"><div class="kl">I</div><div class="kn">14</div></div>
+    <div class="k"><div class="kl">J</div><div class="kn">26</div></div>
+    <div class="k"><div class="kl">K</div><div class="kn">1</div></div>
+    <div class="k"><div class="kl">L</div><div class="kn">19</div></div>
+    <div class="k"><div class="kl">M</div><div class="kn">8</div></div>
+    <div class="k"><div class="kl">N</div><div class="kn">23</div></div>
+    <div class="k"><div class="kl">O</div><div class="kn">13</div></div>
+    <div class="k"><div class="kl">P</div><div class="kn">5</div></div>
+    <div class="k"><div class="kl">Q</div><div class="kn">28</div></div>
+    <div class="k"><div class="kl">R</div><div class="kn">16</div></div>
+    <div class="k"><div class="kl">S</div><div class="kn">10</div></div>
+    <div class="k"><div class="kl">T</div><div class="kn">33</div></div>
+    <div class="k"><div class="kl">U</div><div class="kn">7</div></div>
+    <div class="k"><div class="kl">V</div><div class="kn">25</div></div>
+    <div class="k"><div class="kl">W</div><div class="kn">3</div></div>
+    <div class="k"><div class="kl">X</div><div class="kn">20</div></div>
+    <div class="k"><div class="kl">Y</div><div class="kn">12</div></div>
+    <div class="k"><div class="kl">Z</div><div class="kn">31</div></div>
+  </div>
+  <div class="legend">Binary reminder: each place is 1, 2, 4, 8, 16, 32 &hellip;
+    So <code>1101</code> = 8 + 4 + 0 + 1 = <strong>13</strong>.</div>
+
+  <h2 class="section">&#128274; Your Secret Message (9 letters)</h2>
+  <div class="puzzle">
+    <div class="word">
+      <div class="cell">
+        <div class="bin">100</div>
+        <div class="arrow">&#9660; to decimal</div>
+        <div class="dec"></div>
+        <div class="arrow">&#9660; look up</div>
+        <div class="let"></div>
+        <div class="lab">letter</div>
+      </div>
+      <div class="cell">
+        <div class="bin">10001</div>
+        <div class="arrow">&#9660; to decimal</div>
+        <div class="dec"></div>
+        <div class="arrow">&#9660; look up</div>
+        <div class="let"></div>
+        <div class="lab">letter</div>
+      </div>
+      <div class="cell">
+        <div class="bin">1101</div>
+        <div class="arrow">&#9660; to decimal</div>
+        <div class="dec"></div>
+        <div class="arrow">&#9660; look up</div>
+        <div class="let"></div>
+        <div class="lab">letter</div>
+      </div>
+      <div class="cell">
+        <div class="bin">11001</div>
+        <div class="arrow">&#9660; to decimal</div>
+        <div class="dec"></div>
+        <div class="arrow">&#9660; look up</div>
+        <div class="let"></div>
+        <div class="lab">letter</div>
+      </div>
+      <div class="cell">
+        <div class="bin">10101</div>
+        <div class="arrow">&#9660; to decimal</div>
+        <div class="dec"></div>
+        <div class="arrow">&#9660; look up</div>
+        <div class="let"></div>
+        <div class="lab">letter</div>
+      </div>
+    </div>
+    <div class="spacer">&#9251;</div>
+    <div class="word">
+      <div class="cell">
+        <div class="bin">11110</div>
+        <div class="arrow">&#9660; to decimal</div>
+        <div class="dec"></div>
+        <div class="arrow">&#9660; look up</div>
+        <div class="let"></div>
+        <div class="lab">letter</div>
+      </div>
+      <div class="cell">
+        <div class="bin">1110</div>
+        <div class="arrow">&#9660; to decimal</div>
+        <div class="dec"></div>
+        <div class="arrow">&#9660; look up</div>
+        <div class="let"></div>
+        <div class="lab">letter</div>
+      </div>
+      <div class="cell">
+        <div class="bin">10000</div>
+        <div class="arrow">&#9660; to decimal</div>
+        <div class="dec"></div>
+        <div class="arrow">&#9660; look up</div>
+        <div class="let"></div>
+        <div class="lab">letter</div>
+      </div>
+      <div class="cell">
+        <div class="bin">10101</div>
+        <div class="arrow">&#9660; to decimal</div>
+        <div class="dec"></div>
+        <div class="arrow">&#9660; look up</div>
+        <div class="let"></div>
+        <div class="lab">letter</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    &#129433; Great work, Agent! Show your instructor when you crack the code. &#129433;
+  </div>
+</body>
+</html>
