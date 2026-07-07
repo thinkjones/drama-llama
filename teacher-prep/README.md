@@ -102,6 +102,47 @@ cd ~/drama-llama/steve && ./gradlew tasks        # Activity 3: Gradle runs (firs
 
 ---
 
+## Activity 3 runs on Windows (not WSL)
+
+Activities 1 & 2 use WSL/Ubuntu. **Activity 3 (the Minecraft mod) runs natively
+on Windows in PowerShell**, because Minecraft needs Windows to render the game.
+Claude Code, the Forge build, and the in-game test all run on the Windows side
+against a Windows copy of the repo.
+
+**Prep each machine for Activity 3:** open **PowerShell** and run:
+
+```powershell
+# from teacher-prep\  (if scripts are blocked first run: Set-ExecutionPolicy -Scope Process Bypass)
+.\setup-windows-modding.ps1
+```
+
+That installs **JDK 17 (Temurin)**, **Git**, **VS Code**, and **Claude Code
+(native)** via `winget` + the official installer, and clones the repo to
+`%USERPROFILE%\drama-llama`. Then, in a fresh PowerShell window:
+
+```powershell
+cd $HOME\drama-llama\steve
+claude                 # log in once so kids don't have to, then /exit
+.\gradlew.bat build    # first build downloads Forge (5-15 min) - do this during prep
+```
+
+**Two ways for kids to test the mod** (full steps in
+[`../steve/TESTING.md`](../steve/TESTING.md)):
+
+- **Way A — `.\gradlew.bat runClient`** — launches a practice Minecraft with the
+  mod loaded. **No Minecraft account or Forge installer needed.** Recommended
+  for the workshop.
+- **Way B — real Minecraft + Forge** — build the jar and drop it into
+  `%APPDATA%\.minecraft\mods`, then launch the **Forge 1.20.1** profile.
+  Requires **Minecraft: Java Edition** (paid) and the **Forge 1.20.1** installer
+  per machine. Use this only if kids will play the mod in their real Minecraft.
+
+> Pre-run `.\gradlew.bat build` **and** one `.\gradlew.bat runClient` on each
+> machine during prep — the first launch caches Minecraft + Forge so class time
+> isn't spent downloading.
+
+---
+
 ## Bonus: printable decoder worksheets
 
 `worksheets/` holds three **secret binary decoder** activity sheets — a fun

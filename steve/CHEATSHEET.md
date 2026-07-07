@@ -1,19 +1,27 @@
 # ⛏️ Activity 3: Minecraft Mod — Cheatsheet
 
 **Your mission:** You have a real Minecraft mod that adds a set of **Agent
-Armor**. Use **Claude Code** to change it and make it your own!
+Armor** and builds a **Spy Headquarters**. Use **Claude Code** to change it and
+make it your own!
+
+> 💻 **This activity runs on Windows, not Ubuntu.** Minecraft needs Windows to
+> show the game, so we use **PowerShell** here instead of the WSL terminal you
+> used in Activities 1 and 2.
 
 ---
 
-## 1. Open the terminal and go to this folder
+## 1. Open PowerShell and go to this folder
 
-Open **Ubuntu** from the Start menu, then type:
+1. Click the **Start** menu.
+2. Type **`PowerShell`** and press **Enter** (a blue window opens).
+3. Type this and press **Enter**:
 
-```bash
-cd ~/drama-llama/steve
+```powershell
+cd $HOME\drama-llama\steve
 ```
 
-This is the mod. Type `ls` to see the files.
+`cd` means "change folder" and `$HOME` is your Windows home folder. Type `ls`
+(or `dir`) to see the files.
 
 ---
 
@@ -28,14 +36,14 @@ This is the mod. Type `ls` to see the files.
   LLAMA** glowing in huge letters — and you spawn right outside the front
   doors! (See `HeadquartersBuilder.java` — try changing the blocks or the
   sign text!)
-- The code lives in `src/main/java/com/dramallama/agentarmor/`.
-- The pictures (textures) live in `src/main/resources/assets/agentarmor/`.
+- The code lives in `src\main\java\com\dramallama\agentarmor\`.
+- The pictures (textures) live in `src\main\resources\assets\agentarmor\`.
 
 ---
 
 ## 3. Start Claude Code and explore
 
-```bash
+```powershell
 claude
 ```
 
@@ -54,10 +62,9 @@ Pick something to change and ask Claude Code to do it. Ideas:
 
 - **Make the armor super strong:** "Make the Agent Armor protect more than
   diamond armor."
-- **Change what repairs it:** "Make the Agent Armor repairable with gold
-  instead of diamonds."
 - **Rename it:** "Rename Agent Armor to Llama Armor everywhere."
-- **Change the color:** "Change the armor texture color to purple."
+- **Change the HQ:** "Build the Spy HQ out of gold blocks."
+- **Change the giant sign:** "Make the sign say AGENT ZONE instead."
 - **Add a new piece or effect** — ask Claude what's possible!
 
 After a change, ask Claude:
@@ -68,34 +75,48 @@ After a change, ask Claude:
 
 ## 5. Build the mod
 
-To turn your code into a real mod file Minecraft can load, type:
+To turn your code into a real mod file, type:
 
-```bash
-./gradlew build
+```powershell
+.\gradlew.bat build
 ```
 
 - The **first** build downloads Minecraft and Forge, so it takes a while
   (5–15 minutes). That's normal — grab a snack! 🍎
-- When it finishes, your mod file appears in `build/libs/agentarmor-1.0.0.jar`.
+- When it finishes, your mod file appears in `build\libs\agentarmor-1.0.0.jar`.
 
 > Stuck on an error? Copy it and ask Claude Code: "I got this error when I ran
-> ./gradlew build — how do I fix it?"
+> .\gradlew.bat build — how do I fix it?"
 
 ---
 
-## 6. Test it in Minecraft (with your instructor)
+## 6. Test it in Minecraft — two ways
 
-```bash
-./gradlew runClient
+There are **two ways** to see your mod in the game. Full step-by-step for both
+is in **[`TESTING.md`](TESTING.md)** — here's the quick version:
+
+### Way A — Test Minecraft (easiest, no Minecraft account needed)
+
+```powershell
+.\gradlew.bat runClient
 ```
 
-This launches a test copy of Minecraft with your mod loaded. As soon as you
-enter a world you'll see the **Camp Drama Llama** welcome and get your armor.
-You can also find it any time in the **Combat** tab of the creative inventory!
+This launches a **practice copy of Minecraft** with your mod already loaded.
+As soon as you enter a world you'll see the **Spy HQ**, the giant sign, the
+welcome banner, and get your armor. Great for quick testing!
+
+### Way B — Your real Minecraft (needs Minecraft Java + Forge installed)
+
+1. Build the mod: `.\gradlew.bat build`
+2. Copy `build\libs\agentarmor-1.0.0.jar` into your Minecraft **mods** folder.
+3. Launch Minecraft with the **Forge 1.20.1** profile and make a new world.
+
+Use this if you want to play your mod in your own Minecraft with your friends.
+See [`TESTING.md`](TESTING.md) for the exact steps.
 
 ---
 
 ### 💡 Remember
-- `./gradlew build` = build your mod
-- `./gradlew runClient` = test it in Minecraft
+- `.\gradlew.bat build` = build your mod
+- `.\gradlew.bat runClient` = test it in practice Minecraft
 - Ask Claude Code anything — it's your modding partner!
