@@ -124,20 +124,29 @@ This launches a **practice copy of Minecraft** with your mod already loaded. As 
 ### Real Minecraft (needs Minecraft Java + Forge)
 
 1. Build the mod: `steve build`
-2. Install Forge 1.20.1:
-   - **Official Minecraft Launcher:** download the Forge installer from
-     <https://files.minecraftforge.net> (pick 1.20.1), run it, and choose
-     **Install client**. This creates a **Forge 1.20.1** profile.
-   - **CurseForge:** create a **Custom Profile** with Minecraft `1.20.1` and
-     Forge `47.x`.
-3. Put the mod jar in the right `mods` folder:
-   - **Official Minecraft Launcher:** `steve install` copies it to
-     `%APPDATA%\.minecraft\mods`.
-   - **CurseForge:** right-click your profile → **Open Folder**, then copy
-     `build\libs\agentarmor-1.0.0.jar` into that profile's `mods` folder.
-4. Launch with the **Forge 1.20.1** profile and make a new world.
+2. Install **Forge 1.20.1** (see below).
+3. Put the mod jar in your mods folder: `steve install`
+4. Launch Minecraft with the **Forge 1.20.1** profile and make a new world.
 
 See [`TESTING.md`](TESTING.md) for full step-by-step details.
+
+---
+
+## Installing Forge 1.20.1
+
+Forge is what lets Minecraft load your mod jar.
+
+1. Go to <https://files.minecraftforge.net/net/minecraftforge/forge/>.
+2. Click **1.20.1** on the left side.
+3. Download the **Installer**.
+   - If you see an ad page first, wait a few seconds and click **Skip** in the top right.
+4. Run the downloaded file (`forge-1.20.1-47.x.x-installer.jar`).
+   - If it doesn't open, right-click it → **Open with** → **Java(TM) Platform SE binary**.
+5. Make sure **Install client** is selected, then click **OK**.
+6. Wait for it to finish. It adds a **Forge 1.20.1** profile to your Minecraft Launcher.
+7. Open the Minecraft Launcher, pick the **Forge 1.20.1** profile, and click **Play**.
+
+> ⚠️ The mod is built for **Minecraft 1.20.1 + Forge only**. It won't load on other versions or on Fabric.
 
 ---
 
