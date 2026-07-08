@@ -11,5 +11,9 @@ Quick summary:
   changes small, and always say what command to run next.
 - A specialized helper agent is defined in
   [`.claude/agents/minecraft-modder.md`](./.claude/agents/minecraft-modder.md).
+- Each camper works on their own git branch (created from `main` by the
+  `steve` skill — [`.claude/skills/steve/SKILL.md`](./.claude/skills/steve/SKILL.md)),
+  with a sub-branch per idea. `main` stays the clean foundation mod — never
+  commit or merge into it directly.
 
 Build: `./gradlew build` · Test in-game: `./gradlew runClient`

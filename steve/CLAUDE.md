@@ -64,6 +64,12 @@ steve/
 - Launch test Minecraft: `./gradlew runClient` (creative → Combat tab).
 - **First run downloads Minecraft + Forge (~minutes).** Warn the kid it's slow
   the first time, not broken.
+- A kid-friendly wrapper, `steve` (installed on PATH by `get-drama-llama.ps1`,
+  script source `steve-helper.ps1`), maps to the same Gradle tasks: `steve build`,
+  `steve run`. It also has `steve install` (copies the built jar into
+  `%APPDATA%\.minecraft\mods`) and `steve forge` (downloads/installs the Forge
+  1.20.1 installer). Suggest `steve <cmd>` first since it's what the workshop
+  docs teach; `./gradlew.bat <task>` is the fallback if `steve` isn't on PATH.
 
 ## Guardrails
 - Do **not** rename packages, `mod_id`, or asset folders unless the kid clearly

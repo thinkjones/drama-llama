@@ -5,6 +5,9 @@ run/
 out/
 bin/
 
+# Forge installer logs (e.g. from `steve forge` / running the installer jar directly)
+forge-*-installer.jar.log
+
 # IDE files
 .idea/
 *.iml
