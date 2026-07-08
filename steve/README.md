@@ -140,8 +140,11 @@ Forge is what lets Minecraft load your mod jar.
 2. Click **1.20.1** on the left side.
 3. Download the **Installer**.
    - If you see an ad page first, wait a few seconds and click **Skip** in the top right.
-4. Run the downloaded file (`forge-1.20.1-47.x.x-installer.jar`).
-   - If it doesn't open, right-click it → **Open with** → **Java(TM) Platform SE binary**.
+4. Run the downloaded file. If double-clicking doesn't work, open PowerShell and run:
+   ```powershell
+   java -jar "$HOME\Downloads\forge-1.20.1-47.x.x-installer.jar"
+   ```
+   Replace `47.x.x` with the actual numbers in the file you downloaded.
 5. Make sure **Install client** is selected, then click **OK**.
 6. Wait for it to finish. It adds a **Forge 1.20.1** profile to your Minecraft Launcher.
 7. Open the Minecraft Launcher, pick the **Forge 1.20.1** profile, and click **Play**.

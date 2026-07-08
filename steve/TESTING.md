@@ -61,8 +61,11 @@ the same on every computer, so a jar you built works in real Minecraft too.
    - Click **1.20.1** on the left side.
    - Download the **Installer**.
      - If you see an ad page first, wait a few seconds and click **Skip** in the top right.
-   - Run the downloaded file (`forge-1.20.1-47.x.x-installer.jar`).
-     - If it doesn't open, right-click it → **Open with** → **Java(TM) Platform SE binary**.
+   - Run the downloaded file. If double-clicking doesn't work, open PowerShell and run:
+     ```powershell
+     java -jar "$HOME\Downloads\forge-1.20.1-47.x.x-installer.jar"
+     ```
+     Replace `47.x.x` with the actual numbers in the file you downloaded.
    - Make sure **Install client** is selected, then click **OK**.
    - Wait for it to finish. It adds a **Forge 1.20.1** profile to the launcher.
 
