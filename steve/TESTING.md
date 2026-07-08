@@ -104,8 +104,10 @@ the same on every computer, so a jar you built works in real Minecraft too.
 Rebuild (`.\gradlew.bat build` or `steve build`), copy the new jar over the old
 one, and relaunch Minecraft. Delete the old jar first if the filename changed.
 
-> ⚠️ The mod is built for **Minecraft 1.20.1 + Forge only**. It won't load on
-> other versions or on Fabric.
+> ⚠️ **CRITICAL:** This mod is built for **Minecraft 1.20.1 + Forge 47.2.0 only**.
+> Launching with **Minecraft 1.20.2, 1.20.3, 1.20.4, 1.20.5, 1.20.6, 1.21, etc.**
+> will crash with an error like `IncompatibleClassChangeError: ...ArmorMaterial is not an interface`.
+> If you see that crash, you picked the wrong Forge profile. Use **Forge 1.20.1**.
 
 ---
 
@@ -117,4 +119,7 @@ one, and relaunch Minecraft. Delete the old jar first if the filename changed.
 - **Mod doesn't appear in real Minecraft (Way B):** check you launched the
   **Forge 1.20.1** profile (not vanilla) and the jar is in
   `%APPDATA%\.minecraft\mods`.
+- **Crash `IncompatibleClassChangeError: ...ArmorMaterial is not an interface`:**
+  you launched with the wrong Minecraft/Forge version (e.g., 1.20.6). Use the
+  **Forge 1.20.1** profile. Run `steve forge` if you don't have it.
 - **Wrong Java:** these need **JDK 17**. Check with `java -version`.

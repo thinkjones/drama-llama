@@ -150,7 +150,9 @@ Forge is what lets Minecraft load your mod jar.
 6. Wait for it to finish. It adds a **Forge 1.20.1** profile to your Minecraft Launcher.
 7. Open the Minecraft Launcher, pick the **Forge 1.20.1** profile, and click **Play**.
 
-> ⚠️ The mod is built for **Minecraft 1.20.1 + Forge only**. It won't load on other versions or on Fabric.
+> ⚠️ **CRITICAL:** This mod is built for **Minecraft 1.20.1 + Forge 47.2.0 only**.  
+> Launching with **Minecraft 1.20.2, 1.20.3, 1.20.4, 1.20.5, 1.20.6, 1.21, etc.** will crash with an error like `IncompatibleClassChangeError: ...ArmorMaterial is not an interface`.  
+> If you see that crash, you picked the wrong Forge profile. Use **Forge 1.20.1**.
 
 ---
 

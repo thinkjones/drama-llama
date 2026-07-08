@@ -44,11 +44,14 @@ function Show-Help {
     Write-Host ""
 
     Write-Host "HOW TO INSTALL INTO REAL MINECRAFT (needs Minecraft Java + Forge 1.20.1)" -ForegroundColor Green
+    Write-Host "  CRITICAL: use ONLY Forge 1.20.1. Newer versions (1.20.2+) will crash." -ForegroundColor Red
+    Write-Host ""
     Write-Host "  Official Minecraft Launcher:"
     Write-Host "    1. steve build"
-    Write-Host "    2. steve install        (puts jar in %APPDATA%\.minecraft\mods)"
-    Write-Host "    3. Open the Minecraft Launcher and pick the 'Forge 1.20.1' profile."
-    Write-Host "    4. Play -> Create New World."
+    Write-Host "    2. steve forge          (installs Forge 1.20.1 if you don't have it)"
+    Write-Host "    3. steve install        (puts jar in %APPDATA%\.minecraft\mods)"
+    Write-Host "    4. Open the Minecraft Launcher and pick the 'Forge 1.20.1' profile."
+    Write-Host "    5. Play -> Create New World."
     Write-Host ""
     Write-Host "  CurseForge:"
     Write-Host "    1. steve build"
