@@ -56,7 +56,11 @@ the same on every computer, so a jar you built works in real Minecraft too.
 ### One-time setup
 1. Install **Minecraft: Java Edition** and run version **1.20.1** once (so the
    files exist).
-2. Install **Forge 1.20.1**:
+2. Install **Forge 1.20.1**. The easiest way is the helper command:
+   ```powershell
+   steve forge
+   ```
+   Or install it by hand:
    - Go to <https://files.minecraftforge.net/net/minecraftforge/forge/>.
    - Click **1.20.1** on the left side.
    - Download the **Installer**.

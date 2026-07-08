@@ -49,6 +49,7 @@ You can also run:
 | `steve build` | Build the mod jar (`build\libs\agentarmor-1.0.0.jar`) |
 | `steve run` | Launch the practice copy of Minecraft with your mod |
 | `steve install` | Copy the mod jar into your real Minecraft `mods` folder |
+| `steve forge` | Download and install Forge 1.20.1 for the official launcher |
 
 ---
 
@@ -124,7 +125,7 @@ This launches a **practice copy of Minecraft** with your mod already loaded. As 
 ### Real Minecraft (needs Minecraft Java + Forge)
 
 1. Build the mod: `steve build`
-2. Install **Forge 1.20.1** (see below).
+2. Install **Forge 1.20.1**: `steve forge`
 3. Put the mod jar in your mods folder: `steve install`
 4. Launch Minecraft with the **Forge 1.20.1** profile and make a new world.
 
@@ -158,5 +159,6 @@ Forge is what lets Minecraft load your mod jar.
 - `steve` — show help
 - `steve build` — build your mod
 - `steve run` — test it in practice Minecraft
+- `steve forge` — install Forge 1.20.1
 - `steve install` — put the mod in your real Minecraft `mods` folder
 - Ask Claude Code anything — it's your modding partner!

@@ -6,6 +6,11 @@ $jarName  = 'agentarmor-1.0.0.jar'
 $jarPath  = Join-Path $steveDir "build\libs\$jarName"
 $modsDir  = "$env:APPDATA\.minecraft\mods"
 
+$forgeMcVersion    = '1.20.1'
+$forgeVersion      = '47.2.0'
+$forgeInstallerUrl = "https://maven.minecraftforge.net/net/minecraftforge/forge/$forgeMcVersion-$forgeVersion/forge-$forgeMcVersion-$forgeVersion-installer.jar"
+$forgeInstallerPath = Join-Path $HOME "Downloads\forge-$forgeMcVersion-$forgeVersion-installer.jar"
+
 function Show-Help {
     Write-Host ""
     Write-Host "🦙 Steve - your Camp Drama Llama Minecraft mod helper" -ForegroundColor Cyan
@@ -57,6 +62,7 @@ function Show-Help {
     Write-Host "  steve build    build the mod jar"
     Write-Host "  steve run      launch practice Minecraft with the mod"
     Write-Host "  steve install  copy the mod jar into your real Minecraft mods folder"
+    Write-Host "  steve forge    download and install Forge $forgeMcVersion-$forgeVersion"
     Write-Host ""
 }
 
@@ -104,6 +110,31 @@ function Invoke-Install {
     Write-Host "Using CurseForge instead? See TESTING.md for the CurseForge mods folder.`n" -ForegroundColor DarkGray
 }
 
+function Invoke-ForgeInstall {
+    Write-Host "`n==> Downloading Forge $forgeMcVersion-$forgeVersion installer..." -ForegroundColor Cyan
+    Write-Host "  From: $forgeInstallerUrl" -ForegroundColor DarkGray
+    Write-Host "  To:   $forgeInstallerPath" -ForegroundColor DarkGray
+
+    try {
+        Invoke-WebRequest -Uri $forgeInstallerUrl -OutFile $forgeInstallerPath -UseBasicParsing
+    } catch {
+        Write-Host "`nDownload failed. Check your internet connection or download manually from:" -ForegroundColor Red
+        Write-Host "  https://files.minecraftforge.net/net/minecraftforge/forge/" -ForegroundColor Yellow
+        return
+    }
+
+    Write-Host "`n[OK] Download complete. Installing Forge client..." -ForegroundColor Green
+    & java -jar "$forgeInstallerPath" --installClient
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "`nForge install failed. Try running the installer manually:" -ForegroundColor Red
+        Write-Host "  java -jar `"$forgeInstallerPath`"" -ForegroundColor Yellow
+        return
+    }
+
+    Write-Host "`n[OK] Forge $forgeMcVersion-$forgeVersion installed!" -ForegroundColor Green
+    Write-Host "Open the Minecraft Launcher and look for the 'Forge $forgeMcVersion' profile.`n" -ForegroundColor Yellow
+}
+
 # --- Main entry point --------------------------------------------------------
 $arg = if ($args.Count -gt 0) { $args[0].ToLower() } else { 'help' }
 
@@ -111,6 +142,7 @@ switch ($arg) {
     'build'   { Invoke-Build }
     'run'     { Invoke-Run }
     'install' { Invoke-Install }
+    'forge'   { Invoke-ForgeInstall }
     'help'    { Show-Help }
     default   {
         Write-Host "Unknown command: $arg" -ForegroundColor Red
